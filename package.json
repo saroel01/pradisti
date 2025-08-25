@@ -1,0 +1,32 @@
+{
+  "name": "pradisti",
+  "version": "1.0.0",
+  "description": "PRADISTI - Integrated School Administration Platform",
+  "scripts": {
+    "dev": "cd app && npm run dev",
+    "build": "cd app && npm run build",
+    "preview": "cd app && npm run preview",
+    "check": "cd app && npm run check",
+    "lint": "cd app && npm run lint",
+    "test": "cd app && npm test",
+    "db:generate": "cd app && npm run db:generate",
+    "db:migrate": "cd app && npm run db:migrate",
+    "db:push": "cd app && npm run db:push",
+    "db:studio": "cd app && npm run db:studio",
+    "db:seed": "cd app && npm run db:seed",
+    "app:install": "cd app && npm install",
+    "pm:status": "echo 'PM Status: Epic PRADISTI in progress'",
+    "pm:help": "echo 'Available PM commands: /pm:status, /pm:epic-status, /pm:issue-start, /pm:issue-sync'"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/saroel01/pradisti.git"
+  },
+  "keywords": ["school", "administration", "svelte", "pm-system"],
+  "author": "saroel01",
+  "license": "MIT",
+  "workspaces": ["app"],
+  "engines": {
+    "node": ">=18.0.0"
+  }
+}
