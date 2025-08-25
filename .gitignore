@@ -1,1 +1,32 @@
+# Dependencies
+app/node_modules/
+app/.svelte-kit/
+app/build/
+
+# Database
+app/db/*.db
+app/db/*.db-shm
+app/db/*.db-wal
+
+# Environment
+app/.env
+app/.env.*
+
+# OS
 .DS_Store
+Thumbs.db
+
+# IDEs
+.vscode/
+.idea/
+
+# PM System (keep tracked)
+# .claude/ - we want to track this
+
+# Logs
+app/logs/
+*.log
+
+# Cache
+app/.vite/
+app/dist/
