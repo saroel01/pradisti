@@ -3,7 +3,7 @@ name: SvelteKit Foundation & Authentication Setup
 status: closed
 created: 2025-08-25T02:28:17Z
 updated: 2025-08-25T07:48:22Z
-github: https://github.com/saroel01/pradisti/issues/283
+github: https://github.com/saroel01/pradisti/issues/2
 depends_on: []
 parallel: true
 conflicts_with: []

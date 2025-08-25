@@ -4,7 +4,7 @@ status: in-progress
 created: 2025-08-25T02:26:30Z
 progress: 11%
 prd: .claude/prds/pradisti-app.md
-github: https://github.com/saroel01/pradisti/issues/277
+github: https://github.com/saroel01/pradisti/issues/1
 ---
 
 # Epic: PRADISTI - Integrated School Administration Platform
@@ -100,7 +100,7 @@ PRADISTI will be implemented as a monolithic SvelteKit application with MariaDB 
 
 ## Tasks Created
 
-- [x] #283 (1231-foundation-auth) - SvelteKit Foundation & Authentication Setup (parallel: true)
+- [x] #2 (1231-foundation-auth) - SvelteKit Foundation & Authentication Setup (parallel: true)
 - [ ] #285 (1232-module-visibility) - Dynamic Module Visibility & Access Control (parallel: false)
 - [ ] #286 (1233-student-model) - MariaDB Schema & 21-Component Student Model (parallel: false)
 - [ ] #278 (1234-academic-module) - Academic Module - Schedules, Attendance & Reports (parallel: false)
