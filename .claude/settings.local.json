@@ -5,7 +5,6 @@
       "Bash(.claude/scripts/test-and-log.sh:*)",
       "Bash(bash .claude/scripts/pm/*)",
       "Bash(.claude/scripts/pm/*)",
-
       "Bash(cat *)",
       "Bash(cat:*)",
       "Bash(composer *)",
@@ -33,7 +32,22 @@
       "Bash(tree *)",
       "List(**)",
       "WebFetch(domain:github.com)",
-      "WebSearch"
+      "WebSearch",
+      "Bash(gh issue create:*)",
+      "Bash(epic_number=277)",
+      "Bash(echo \"Epic created: #$epic_number\")",
+      "Bash(gh extension:*)",
+      "Bash(grep:*)",
+      "Bash(grep:*)",
+      "Bash(grep:*)",
+      "Bash(gh sub-issue:*)",
+      "Bash(gh issue view:*)",
+      "Read(/E:\\tmp/**)",
+      "Bash(git worktree:*)",
+      "Bash(powershell:*)",
+      "Read(/E:\\aplikasi iseng v2/**)",
+      "Read(/E:\\aplikasi iseng v2\\epic-pradisti-app/**)",
+      "Read(/E:\\aplikasi iseng v2\\epic-pradisti-app/**)"
     ]
   }
 }

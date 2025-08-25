@@ -1,0 +1,196 @@
+---
+name: pradisti-app
+status: backlog
+created: 2025-08-25T02:26:30Z
+progress: 0%
+prd: .claude/prds/pradisti-app.md
+github: https://github.com/automazeio/ccpm/issues/277
+---
+
+# Epic: PRADISTI - Integrated School Administration Platform
+
+## Overview
+
+PRADISTI will be implemented as a monolithic SvelteKit application with MariaDB backend, featuring dynamic module visibility and comprehensive student data management. The system prioritizes simplicity and maintainability while delivering essential school administration functionality through 6 core modules.
+
+## Architecture Decisions
+
+### Core Technology Stack
+- **SvelteKit 2.0+ Monolith**: Single application architecture for simplified deployment and maintenance
+- **TypeScript 5.6+ (Normal Mode)**: Gradual adoption for improved type safety without development overhead
+- **MariaDB 11.8.2**: Reliable database with utf8mb4 support for Indonesian content
+- **Lucia v3**: Database session storage with secure authentication
+- **Prisma ORM**: Type-safe database operations with automated migrations
+
+### Key Design Patterns
+- **Module-based Architecture**: Logical separation of functionality while maintaining monolithic deployment
+- **Progressive Data Entry**: 21-component student model with 4 mandatory fields and completion tracking
+- **Access Control Guards**: Route-level and component-level security enforcement
+- **Library-First Approach**: Leverage DaisyUI, TanStack Table, Superforms instead of custom components
+
+### Performance Strategy
+- **Bundle Optimization**: <400KB initial load through strategic code splitting
+- **Database Indexing**: Optimized MariaDB indexes for student search and module operations
+- **Caching Strategy**: Server-side caching for frequently accessed data
+- **Progressive Enhancement**: Mobile-first responsive design with tablet/desktop enhancements
+
+## Technical Approach
+
+### Frontend Components
+- **Layout System**: Dynamic sidebar with module visibility integration
+- **Form Components**: Multi-step student registration with validation
+- **Data Tables**: TanStack Svelte Table for student listings and data management
+- **Module Guards**: Component-level access control enforcement
+- **Notification System**: SSE-based real-time updates for system events
+
+### Backend Services
+- **Authentication Service**: Lucia v3 with role-based session management
+- **Module Visibility Engine**: Dynamic module loading based on user permissions
+- **Student Data Service**: CRUD operations with completion rate calculation
+- **Audit Logging Service**: Activity tracking with sensitive data flagging
+- **File Upload Service**: Document management with type validation
+
+### Database Design
+- **User Management**: Users, sessions, modules, and permissions
+- **Student Core**: 21-component model with progressive entry tracking
+- **Academic System**: Classes, schedules, attendance, and reports
+- **Student Services**: Discipline, achievements, and activities
+- **BK System**: Access-controlled counseling with session tracking
+- **Asset Management**: Inventory and maintenance logging
+- **Financial Tracking**: Income/expense and budget management
+
+### Infrastructure
+- **Single Server Deployment**: On-premises MariaDB + Node.js application
+- **File Storage**: Local filesystem with organized directory structure
+- **Backup Strategy**: Daily automated MySQL dumps with retention policy
+- **Monitoring**: Activity logging with optional external monitoring integration
+
+## Implementation Strategy
+
+### Development Phases (7.5 Months)
+
+**Phase 1: Foundation (Months 1-2)**
+- Core SvelteKit setup with TypeScript and styling
+- Authentication system with Lucia v3
+- Module visibility system with dynamic loading
+- 21-component student data model with progressive entry
+
+**Phase 2: Core Modules (Months 3-5)**
+- Academic module (schedules, attendance, reports)
+- Student services module (discipline, achievements, activities)
+- BK module with strict access control implementation
+
+**Phase 3: Support & Launch (Months 6-7.5)**  
+- Asset management and financial tracking modules
+- Cross-module integration and testing
+- Production deployment and staff training
+
+### Risk Mitigation
+- **Student Data Complexity**: Progressive implementation starting with 4 mandatory fields
+- **Module Visibility**: UI-based hide/show with database-driven configuration
+- **BK Access Control**: Server-side validation with route-level protection
+- **MariaDB Compatibility**: Early testing with Prisma and standard SQL practices
+
+### Testing Approach
+- **Unit Testing**: Core business logic and data validation
+- **Integration Testing**: Module interactions and database operations
+- **Access Control Testing**: Comprehensive security validation
+- **Performance Testing**: Load testing with 50-100 concurrent users
+- **User Acceptance Testing**: Staff workflow validation
+
+## Tasks Created
+
+- [ ] #283 - SvelteKit Foundation & Authentication Setup (parallel: true)
+- [ ] #285 - Dynamic Module Visibility & Access Control (parallel: false)
+- [ ] #286 - MariaDB Schema & 21-Component Student Model (parallel: false)
+- [ ] #278 - Academic Module - Schedules, Attendance & Reports (parallel: false)
+- [ ] #279 - Student Services - Discipline, Achievements & Activities (parallel: true)
+- [ ] #281 - BK Counseling Module with Strict Access Control (parallel: true)
+- [ ] #280 - Asset Management & Financial Tracking Modules (parallel: true)
+- [ ] #282 - Cross-Module Integration & System Testing (parallel: false)
+- [ ] #284 - Production Deployment & Staff Training (parallel: false)
+
+Total tasks: 9
+Parallel tasks: 4
+Sequential tasks: 5
+Estimated total effort: 25-28 days
+## Dependencies
+
+### External Dependencies
+- **MariaDB 11.8.2**: Database server installation and configuration
+- **Node.js 22 LTS**: Runtime environment with Asia/Jakarta timezone
+- **School Infrastructure**: Network connectivity and server hardware
+
+### Development Dependencies
+- **Prisma ORM**: Database schema management and type generation
+- **DaisyUI**: Pre-built UI components for rapid development
+- **TanStack Table**: High-performance data grid functionality
+- **Lucia v3**: Authentication and session management
+- **Zod**: Runtime type validation for form inputs
+
+### Internal Dependencies
+- **Staff Training**: User onboarding and system administration knowledge
+- **Data Migration**: Manual transfer of existing student records
+- **Security Setup**: Role assignments and initial user configuration
+
+## Success Criteria (Technical)
+
+### Performance Benchmarks
+- **Page Load**: <3 seconds on standard school internet connections
+- **Bundle Size**: <400KB initial application load
+- **Database Response**: <100ms average query response time
+- **Concurrent Users**: Stable operation with 50-100 simultaneous users
+
+### Quality Gates
+- **Security**: Zero unauthorized access to BK module
+- **Data Integrity**: >99% consistency across all modules
+- **Module Visibility**: 100% reliability in access control system
+- **Error Rate**: <1% system errors during operational hours
+
+### Acceptance Criteria
+- All 6 modules functional with role-based access
+- 21-component student data model with completion tracking
+- Dynamic module visibility working for all user roles
+- BK module access restricted to authorized personnel only
+- Cross-module data integration seamless
+- Mobile-responsive interface functional on tablets
+
+## Estimated Effort
+
+### Overall Timeline
+- **Total Duration**: 7.5 months (including 0.5-month buffer)
+- **Team Size**: 2-3 developers optimal
+- **Critical Path**: Foundation → Student Data → Core Modules → Integration
+
+### Resource Requirements
+- **Lead Developer**: Full-stack SvelteKit + database expertise
+- **Frontend Developer**: TypeScript + responsive design skills
+- **Backend Developer**: Node.js + MariaDB optimization knowledge
+
+### Critical Path Items
+1. Module visibility system implementation (affects all other modules)
+2. Student data model completion (required for academic and student services)
+3. BK module access control (security-critical implementation)
+4. Cross-module integration testing (system reliability dependency)
+
+## Simplification Opportunities
+
+### Leverage Existing Solutions
+- **DaisyUI Components**: Instead of custom UI component library
+- **TanStack Table**: Instead of custom data grid implementation
+- **Superforms**: Instead of custom form handling system
+- **HTML5 Features**: Native file upload with progress instead of complex upload system
+
+### Architectural Simplifications
+- **Monolithic Design**: Single deployable unit instead of microservices
+- **File-based Routing**: SvelteKit conventions instead of custom routing
+- **Database Sessions**: Simple session storage instead of JWT complexity
+- **Access Control**: Route-level guards instead of complex permission system
+
+### Feature Reduction
+- **Basic Reporting**: Simple export instead of advanced analytics
+- **Essential BK Features**: Core counseling tracking without complex workflow
+- **Standard File Upload**: Basic document management without versioning
+- **Simple Audit Log**: Activity tracking without complex event sourcing
+
+This epic provides a practical, achievable implementation plan that balances comprehensive functionality with development simplicity, ensuring successful delivery within the 7.5-month timeline.
